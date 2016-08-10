@@ -23,5 +23,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  username: mina_deploy
+  database: pic_artcraft
   pool: 5
+  username: mina_deploy
+  password:
