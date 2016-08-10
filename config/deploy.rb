@@ -23,7 +23,7 @@ set :rvm_path, '/usr/local/rvm/bin/rvm'
 set :shared_paths, ['config/database.yml', 'config/secrets.yml', 'log']
 
 # Optional settings:
-   set :user, 'root'    # Username in the server to SSH to.
+   set :user, 'mina_deploy'    # Username in the server to SSH to.
 #   set :port, '30000'     # SSH port number.
 #   set :forward_agent, true     # SSH forward_agent.
 
@@ -35,6 +35,7 @@ task :environment do
   # invoke :'rbenv:load'
 
   # For those using RVM, use this to load an RVM version@gemset.
+  invoke :'rvm:use[ruby-2.3.0-p0@default]'
   # invoke :'rvm:use[ruby-1.9.3-p125@default]'
 end
 
