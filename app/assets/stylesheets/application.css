@@ -14,3 +14,8 @@
  *= require_tree .
  *= require_self
  */
+
+.caption > a {
+    display:inline;
+    position: relative;
+}

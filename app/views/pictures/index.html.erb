@@ -1,9 +1,14 @@
 
 <div id="gallery">
   <% @pictures.each do |pic| %>
-    <%= link_to raw_url(pic) do %>
-      <%= image_tag limit_width_url(pic) %>
-      <!--<%= link_to 'download', download_url(pic), download: generate_filename(pic) %>-->
-    <% end %>
+    <div>
+      <%= link_to raw_url(pic) do %>
+          <%= image_tag limit_width_url(pic) %>
+      <% end %>
+      <div class="caption">
+        <%= generate_filename pic %>
+        <%= link_to 'download', download_url(pic), download: generate_filename(pic) %>
+      </div>
+    </div>
   <% end %>
 </div>
