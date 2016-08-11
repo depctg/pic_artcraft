@@ -1,4 +1,7 @@
 
 <% @pictures.each do |pic| %>
-    <%= image_tag limit_width(pic.picture.url) %>
+    <div class="flexbox">
+      <%= image_tag limit_width_url(pic) %>
+      <%= link_to 'download', download_url(pic), download: generate_filename(pic) %>
+    </div>
 <% end %>
