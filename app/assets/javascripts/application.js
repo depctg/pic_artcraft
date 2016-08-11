@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.justifiedGallery.min
 //= require turbolinks
 //= require_tree .
