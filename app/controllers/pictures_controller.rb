@@ -4,12 +4,12 @@ class PicturesController < ApplicationController
   end
 
   def create
-    @picture = Picture.new picture_params
-    if @picture.save
-      redirect_to pictures_url
-    else
-      render :new
+    params[:picture][:picture].each do |file|
+      picture = Picture.new picture_params(file)
+      # TODO error handle
+      picture.save
     end
+    redirect_to pictures_url
   end
 
   def index
@@ -17,17 +17,10 @@ class PicturesController < ApplicationController
   end
 
   private
-    def picture_params
-      def valid_picture_params
-        params.require(:picture).permit(:picture, :title, :author)
-      end
-
-      par = valid_picture_params
-      # TODO: formal method to check and build meta info
-      if par
-        par[:filename] = par[:picture].original_filename
-      end
-
+    def picture_params(file)
+      par = {}
+      par[:picture] = file
+      par[:filename] = file.original_filename
       par
     end
 end

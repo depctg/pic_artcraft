@@ -3,4 +3,5 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).on 'ready page:load', ->
+  #  this number is changed with device
   $('#gallery').justifiedGallery({rowHeight: 400})
