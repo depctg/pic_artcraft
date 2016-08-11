@@ -1,0 +1,6 @@
+<%= form_for @picture, html: {multipart: true} do |f| %>
+  <span class="picture">
+    <%= f.file_field :picture %>
+  </span>
+  <%= f.submit 'Upload Image' %>
+<% end %>

@@ -22,3 +22,9 @@
 
 # Ignore RubyMine configs
 /.idea
+
+# Ignore deploy configs
+/config/deplor.rb
+
+# Ignore uploaded files
+/public/uploads/tmp

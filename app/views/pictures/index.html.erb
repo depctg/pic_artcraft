@@ -1,0 +1,4 @@
+
+<% @pictures.each do |pic| %>
+    <%= image_tag limit_width(pic.picture.url) %>
+<% end %>
