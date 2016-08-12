@@ -2,6 +2,6 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$(document).on 'ready page:load', ->
-  #  this number is changed with device
-  $('#gallery').justifiedGallery({rowHeight: 400})
+# work with turbolinks
+$(document).on 'turbolinks:load', -> $('#gallery').justifiedGallery({rowHeight: window.innerHeight / 1.5})
+#$.ajax({type: 'get', url: 'http://localhost:3000/pictures', dataType:'json', success: function(data){console.log(data)}})
