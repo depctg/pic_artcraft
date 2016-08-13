@@ -5,11 +5,15 @@
   <% @pictures.each do |pic| %>
     <div class="picture">
       <%= link_to raw_url(pic) do %>
-          <%= image_tag limit_width_url(pic), alt: generate_filename(pic) %>
+          <%= image_tag thumbnail_url(pic), alt: generate_filename(pic) %>
       <% end %>
       <div class="caption">
         <%= generate_filename pic %>
-        <%= link_to 'download', download_url(pic), download: generate_filename(pic) %>
+        <%= link_to download_url(pic),
+              download: generate_filename(pic),
+              class: 'icon' do %>
+          <i class="color-white fa fa-arrow-circle-o-down fa-2x"></i>
+        <% end %>
       </div>
     </div>
   <% end %>

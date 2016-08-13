@@ -4,8 +4,8 @@ module PicturesHelper
     pic.picture.url
   end
 
-  def limit_width_url(pic, width = 300)
-    pic.picture.url + "?imageView2/2/w/#{width}"
+  def thumbnail_url(pic, height = 250)
+    pic.picture.url + "?imageView2/2/h/#{height}"
   end
 
   def download_url(pic)

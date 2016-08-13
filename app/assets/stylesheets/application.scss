@@ -9,13 +9,33 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
+ */
+
+
+/*
  *= require justifiedGallery.min
  *= require_tree .
  *= require_self
  */
 
-.caption > a {
-    display:inline;
-    position: relative;
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+.color-white {
+  color: white;
+}
+
+div {
+  display: flex;
+  flex-direction: row;
+  vertical-align: middle;
+  justify-content: space-between;
+  align-items: center;
+  .icon {
+    margin-left: 0.5em;
+  }
+}
+
+body {
+  padding: 0 50px;
 }
