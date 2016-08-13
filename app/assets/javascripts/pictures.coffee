@@ -27,7 +27,8 @@ $(document).on 'turbolinks:load', ->
 
   pic_allow_load = true
   $(window).scroll ->
-    if $(window).scrollTop() and $(window).scrollTop() + $(window).height() == $(document).height()
+    if $(window).scrollTop() and
+       bufferSize + $(window).scrollTop() + $(window).height() >= $(document).height()
       if pic_allow_load
         if $('nav.pagination a[rel=next]').length
           pic_allow_load = false
