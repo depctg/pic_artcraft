@@ -1,11 +1,11 @@
 class PicturesController < ApplicationController
-  include PicturesHelper
 
   def new
     @picture = Picture.new
   end
 
   def create
+    params.require(:picture).require(:picture)
     params[:picture][:picture].each do |file|
       picture = Picture.new picture_params(file)
       # TODO error handle
@@ -15,12 +15,10 @@ class PicturesController < ApplicationController
   end
 
   def index
-    @pictures = Picture.all
+    @pictures = Picture.page params[:page]
     respond_to do |format|
       format.html
-      format.json do
-        render json: pictures_to_json(@pictures)
-      end
+      format.json
     end
   end
 
@@ -32,14 +30,4 @@ class PicturesController < ApplicationController
       par
     end
 
-    def pictures_to_json(pictures)
-      pictures.map do |pic|
-        {
-          raw: raw_url(pic),
-          download: download_url(pic),
-          thumbnail: limit_width_url(pic),
-          filename: generate_filename(pic)
-        }
-      end .to_json
-    end
 end

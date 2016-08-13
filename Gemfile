@@ -35,6 +35,12 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'carrierwave'
 gem 'carrierwave-qiniu', '~> 0.1.8'
 
+# Use kaminari to gagination
+gem 'kaminari'
+
+# Use Rabl to handle json response
+gem 'rabl-rails'
+
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
